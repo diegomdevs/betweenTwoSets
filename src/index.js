@@ -1,12 +1,12 @@
 function getTotalX(a = [], b = []) {
+    // main formula = (i % aElement === 0) && (i % aElement === 0) && (b[0] % i === 0) && (b[1] % i === 0)
     let numbers = 0;
-    for (let index = 0; index < b.length; index++) {
-        const aElement = a[index];
-        const bElement = b[index];
-        if (b[b.length - 1] / a[0] % aElement === 0) numbers++;
-        if (b[b.length - 2] / a[1] % bElement === 0) numbers++;
+    for (let i = 0; i <= 100; i++) {
+        if ((a.every((element) => {if (i % element === 0) {return true}})) && (b.every((element) => {if (element % i === 0) return true}))) {
+            numbers++;
+        }
     }
     return numbers;
 }
 
-console.log(getTotalX([2, 3], [2, 4]));
+console.log(getTotalX([2, 1], [1, 3]));

@@ -1,12 +1,12 @@
 def getTotalX(a, b):
-  numbers = 0
-  for i in range(a[0], b[len(b) - 1]):
-    number = i
-    for j in range(0, (len(a) + len(b))):
-      aElement = a[j]
-      bElement = b[j]
-      if number % aElement == 0 and number % bElement == 0:
-        numbers += 1
+  ans=0
+  for i in range(1, 101):
+      if all(i%x==0 for x in a) and all(x%i==0 for x in b):
+          ans+=1
+  return ans
 
 def main():
-  getTotalX()
+  print(getTotalX([2, 3], [2, 4]))
+
+if __name__ == "__main__":
+  main()
