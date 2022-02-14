@@ -9,4 +9,4 @@ function getTotalX(a = [], b = []) {
     return numbers;
 }
 
-console.log(getTotalX([2, 1], [1, 3]));
+console.log(getTotalX([2, 1], [1, 34));
